@@ -1,0 +1,446 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tajawal Arabic Font - Offline */
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Tajawal-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Tajawal-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Tajawal-Bold.woff2') format('woff2');
+}
+
+/* Gaming E-Commerce Design System - Cyberpunk/Esports Theme */
+
+@layer base {
+  :root {
+    /* Light mode - Gaming theme with lighter backgrounds */
+    --background: 220 20% 96%;
+    --foreground: 220 20% 10%;
+
+    /* Cards and surfaces */
+    --card: 220 20% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 220 20% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    /* Primary - Electric Cyan */
+    --primary: 185 100% 40%;
+    --primary-foreground: 220 20% 98%;
+
+    /* Secondary - Magenta/Pink */
+    --secondary: 300 80% 50%;
+    --secondary-foreground: 220 20% 98%;
+
+    /* Muted elements */
+    --muted: 220 15% 90%;
+    --muted-foreground: 215 20% 40%;
+
+    /* Accent - Electric Blue */
+    --accent: 210 100% 50%;
+    --accent-foreground: 220 20% 98%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders and inputs */
+    --border: 220 15% 85%;
+    --input: 220 15% 85%;
+    --ring: 185 100% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom gaming colors */
+    --neon-cyan: 185 100% 40%;
+    --neon-magenta: 300 80% 50%;
+    --neon-blue: 210 100% 50%;
+    --neon-purple: 270 100% 55%;
+    --neon-green: 120 100% 40%;
+
+    /* Gaming gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(var(--neon-cyan)), hsl(var(--neon-magenta)));
+    --gradient-rgb: linear-gradient(90deg, hsl(var(--neon-cyan)), hsl(var(--neon-blue)), hsl(var(--neon-magenta)), hsl(var(--neon-purple)));
+    --gradient-dark: linear-gradient(180deg, hsl(220 20% 94%), hsl(220 20% 96%));
+    --gradient-card: linear-gradient(145deg, hsl(220 20% 98%), hsl(220 20% 94%));
+
+    /* Shadows */
+    --shadow-neon: 0 0 20px hsl(var(--neon-cyan) / 0.2), 0 0 40px hsl(var(--neon-cyan) / 0.1);
+    --shadow-magenta: 0 0 20px hsl(var(--neon-magenta) / 0.2), 0 0 40px hsl(var(--neon-magenta) / 0.1);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.1);
+    --shadow-glow: 0 0 30px hsl(var(--neon-cyan) / 0.2);
+
+    /* Sidebar */
+    --sidebar-background: 220 20% 98%;
+    --sidebar-foreground: 220 20% 10%;
+    --sidebar-primary: 185 100% 40%;
+    --sidebar-primary-foreground: 220 20% 98%;
+    --sidebar-accent: 220 15% 92%;
+    --sidebar-accent-foreground: 220 20% 10%;
+    --sidebar-border: 220 15% 85%;
+    --sidebar-ring: 185 100% 40%;
+  }
+
+  .dark {
+    /* Dark gaming backgrounds */
+    --background: 220 20% 4%;
+    --foreground: 210 40% 98%;
+
+    /* Cards and surfaces */
+    --card: 220 20% 7%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 7%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Electric Cyan */
+    --primary: 185 100% 50%;
+    --primary-foreground: 220 20% 4%;
+
+    /* Secondary - Magenta/Pink */
+    --secondary: 300 100% 60%;
+    --secondary-foreground: 220 20% 4%;
+
+    /* Muted elements */
+    --muted: 220 15% 15%;
+    --muted-foreground: 215 20% 55%;
+
+    /* Accent - Electric Blue */
+    --accent: 210 100% 60%;
+    --accent-foreground: 220 20% 4%;
+
+    /* Destructive */
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders and inputs */
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 185 100% 50%;
+
+    /* Custom gaming colors */
+    --neon-cyan: 185 100% 50%;
+    --neon-magenta: 300 100% 60%;
+    --neon-blue: 210 100% 60%;
+    --neon-purple: 270 100% 65%;
+    --neon-green: 120 100% 50%;
+
+    /* Gaming gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(var(--neon-cyan)), hsl(var(--neon-magenta)));
+    --gradient-rgb: linear-gradient(90deg, hsl(var(--neon-cyan)), hsl(var(--neon-blue)), hsl(var(--neon-magenta)), hsl(var(--neon-purple)));
+    --gradient-dark: linear-gradient(180deg, hsl(220 20% 8%), hsl(220 20% 4%));
+    --gradient-card: linear-gradient(145deg, hsl(220 20% 10%), hsl(220 20% 6%));
+
+    /* Shadows */
+    --shadow-neon: 0 0 20px hsl(var(--neon-cyan) / 0.3), 0 0 40px hsl(var(--neon-cyan) / 0.1);
+    --shadow-magenta: 0 0 20px hsl(var(--neon-magenta) / 0.3), 0 0 40px hsl(var(--neon-magenta) / 0.1);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 30px hsl(var(--neon-cyan) / 0.4);
+
+    /* Sidebar */
+    --sidebar-background: 220 20% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 185 100% 50%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 185 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Arabic font class */
+  html.font-arabic,
+  html.font-arabic body {
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  /* RTL Support */
+  html[dir="rtl"] {
+    direction: rtl;
+  }
+
+  html[dir="rtl"] .rtl\:space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+  }
+
+  html[dir="rtl"] .rtl\:mr-auto {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  html[dir="rtl"] .rtl\:ml-auto {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  html[dir="rtl"] .rtl\:text-right {
+    text-align: right;
+  }
+
+  html[dir="rtl"] .rtl\:flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  /* LTR utility classes for RTL context */
+  html[dir="rtl"] .ltr\:mr-2 {
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+
+  html[dir="rtl"] .rtl\:ml-2 {
+    margin-left: 0.5rem;
+    margin-right: 0;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+}
+
+@layer utilities {
+  /* Neon text effects */
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--neon-cyan) / 0.8), 0 0 20px hsl(var(--neon-cyan) / 0.5), 0 0 40px hsl(var(--neon-cyan) / 0.3);
+  }
+
+  .text-glow-magenta {
+    text-shadow: 0 0 10px hsl(var(--neon-magenta) / 0.8), 0 0 20px hsl(var(--neon-magenta) / 0.5), 0 0 40px hsl(var(--neon-magenta) / 0.3);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-rgb {
+    background: var(--gradient-rgb);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  /* Border glow */
+  .border-glow {
+    border-color: hsl(var(--neon-cyan));
+    box-shadow: var(--shadow-neon);
+  }
+
+  .border-glow-magenta {
+    border-color: hsl(var(--neon-magenta));
+    box-shadow: var(--shadow-magenta);
+  }
+
+  /* Card hover glow */
+  .card-glow {
+    transition: all 0.3s ease;
+  }
+
+  .card-glow:hover {
+    box-shadow: var(--shadow-neon);
+    border-color: hsl(var(--neon-cyan) / 0.5);
+  }
+
+  /* RGB border animation */
+  .rgb-border {
+    position: relative;
+    background: hsl(var(--card));
+  }
+
+  .rgb-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: var(--gradient-rgb);
+    background-size: 400% 400%;
+    border-radius: inherit;
+    z-index: -1;
+    animation: gradient-shift 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .rgb-border:hover::before {
+    opacity: 1;
+  }
+
+  /* Glass effect */
+  .glass {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Animated background grid */
+  .bg-grid {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Scanline effect */
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(0 0% 0% / 0.03) 2px,
+      hsl(0 0% 0% / 0.03) 4px
+    );
+    pointer-events: none;
+  }
+}
+
+@layer components {
+  /* Neon button styles */
+  .btn-neon {
+    @apply relative overflow-hidden font-semibold transition-all duration-300;
+    background: transparent;
+    border: 2px solid hsl(var(--neon-cyan));
+    color: hsl(var(--neon-cyan));
+    text-shadow: 0 0 5px hsl(var(--neon-cyan) / 0.5);
+    box-shadow: 0 0 10px hsl(var(--neon-cyan) / 0.3), inset 0 0 10px hsl(var(--neon-cyan) / 0.1);
+  }
+
+  .btn-neon:hover {
+    background: hsl(var(--neon-cyan));
+    color: hsl(var(--background));
+    box-shadow: 0 0 30px hsl(var(--neon-cyan) / 0.6), 0 0 60px hsl(var(--neon-cyan) / 0.3);
+    text-shadow: none;
+  }
+
+  .btn-neon-magenta {
+    @apply btn-neon;
+    border-color: hsl(var(--neon-magenta));
+    color: hsl(var(--neon-magenta));
+    text-shadow: 0 0 5px hsl(var(--neon-magenta) / 0.5);
+    box-shadow: 0 0 10px hsl(var(--neon-magenta) / 0.3), inset 0 0 10px hsl(var(--neon-magenta) / 0.1);
+  }
+
+  .btn-neon-magenta:hover {
+    background: hsl(var(--neon-magenta));
+    color: hsl(var(--background));
+    box-shadow: 0 0 30px hsl(var(--neon-magenta) / 0.6), 0 0 60px hsl(var(--neon-magenta) / 0.3);
+  }
+
+  .btn-gradient {
+    @apply font-semibold transition-all duration-300;
+    background: var(--gradient-neon);
+    color: hsl(var(--background));
+    box-shadow: 0 4px 20px hsl(var(--neon-cyan) / 0.3);
+  }
+
+  .btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px hsl(var(--neon-cyan) / 0.5);
+  }
+}
+
+/* Keyframes */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--neon-cyan) / 0.6), 0 0 60px hsl(var(--neon-cyan) / 0.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
